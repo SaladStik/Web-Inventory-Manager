@@ -4,6 +4,7 @@ const path = require('path');
 const fs = require('fs');
 const { validateUser, getProductData } = require('./database');
 const WebSocket = require('ws');
+const db = require('./database'); // Adjust the path as needed
 
 // Load configuration
 const config = JSON.parse(fs.readFileSync(path.join(__dirname, 'config.json'), 'utf8'));
@@ -68,6 +69,20 @@ app.post('/api/update-config', (req, res) => {
     app.use('/images', express.static(imageDirectory));
 
     res.status(200).json({ message: 'Configuration updated successfully' });
+});
+
+app.get('/api/get-serial-numbers', async (req, res) => {
+    const productId = req.query.id_product;
+    if (!productId) {
+        return res.status(400).json({ error: 'Product ID is required' });
+    }
+
+    try {
+        const serialNumbers = await db.getSerialNumbers(productId);
+        res.json(serialNumbers);
+    } catch (error) {
+        res.status(500).json({ error: 'Error fetching serial numbers' });
+    }
 });
 
 const server = app.listen(port, () => {

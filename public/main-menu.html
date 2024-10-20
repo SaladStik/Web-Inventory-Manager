@@ -53,6 +53,8 @@
                 tableBody.innerHTML = '';
                 data.forEach(item => {
                     const imageUrl = item.image_url ? `/images/${item.image_url}` : '';
+                    const supplierLink = item.supplier_link ? new URL(item.supplier_link) : null;
+                    const truncatedLink = supplierLink ? `${supplierLink.origin}` : 'N/A';
                     const row = document.createElement('tr');
                     row.innerHTML = `
                         <td>${item.id ?? 'N/A'}</td>
@@ -64,16 +66,27 @@
                         <td><input type="checkbox" ${item.require_serial_number ? 'checked' : ''} disabled></td>
                         <td class="preview-image-container">${imageUrl ? `<span class="click-to-view" data-url="${imageUrl}">Click To View Product</span>` : '<span class="no-image">No Image Available</span>'}</td>
                         <td>${item.supplier ?? 'N/A'}</td>
-                        <td><a href="${item.supplier_link ?? '#'}" target="_blank">${item.supplier_link ?? 'N/A'}</a></td>
+                        <td><a href="${item.supplier_link ?? '#'}" target="_blank" class="supplier-link">${truncatedLink}</a></td>
                         <td>${item.min_stock ?? 'N/A'}</td>
                         <td>${item.bin ?? 'N/A'}</td>
                     `;
                     tableBody.appendChild(row);
+
+                    // Add event listener for rows that track serial numbers
+                    if (item.require_serial_number) {
+                        row.addEventListener('click', (event) => {
+                            const target = event.target;
+                            if (!target.classList.contains('click-to-view') && !target.closest('a')) {
+                                window.location.href = `serial-numbers.html?id_product=${item.id}`;
+                            }
+                        });
+                    }
                 });
 
                 // Add event listeners to "Click To View Product" for preview
                 document.querySelectorAll('.click-to-view').forEach(span => {
-                    span.addEventListener('click', function() {
+                    span.addEventListener('click', function(event) {
+                        event.stopPropagation(); // Prevent row click event
                         console.log('Image clicked:', this.dataset.url);
                         const modal = document.getElementById('imageModal');
                         const modalImg = document.getElementById('img01');

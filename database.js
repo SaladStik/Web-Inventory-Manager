@@ -58,5 +58,28 @@ module.exports = {
             console.error('Error fetching product data:', err);
             throw err;
         }
+    },
+
+    getSerialNumbers: async (productId) => {
+        const query = `
+            SELECT h.id, h.id_product, l.name AS location_name, h.serial_number, h.date, h.note, h.ticket_num
+            FROM history h
+            JOIN location l ON h.id_location = l.id
+            WHERE h.id_product = $1
+            ORDER BY h.id ASC`;
+        const values = [productId];
+
+        try {
+            console.log('Executing query:', query);
+            console.log('With values:', values);
+
+            const res = await client.query(query, values);
+            console.log('Query result:', res.rows);
+
+            return res.rows;
+        } catch (err) {
+            console.error('Error fetching serial numbers:', err);
+            throw err;
+        }
     }
 };

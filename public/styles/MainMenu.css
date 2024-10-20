@@ -181,6 +181,10 @@ input[type="checkbox"]:hover {
     cursor: default;
 }
 
+.supplier-link {
+    font-size: 12px; /* Make the supplier link text smaller */
+}
+
 /* Style for hyperlinks */
 a {
     color: #1a73e8; /* Google blue */
