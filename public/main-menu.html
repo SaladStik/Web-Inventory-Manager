@@ -4,8 +4,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Menu</title>
+    <link rel="stylesheet" href="./styles/MainMenu.css">
 </head>
 <body>
     <h1>Welcome to the Main Menu</h1>
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th data-key="id">ID<div class="resizer"></div></th>
+                <th data-key="model_number">Model Number<div class="resizer"></div></th>
+                <th data-key="alias">Alias<div class="resizer"></div></th>
+                <th data-key="type">Type<div class="resizer"></div></th>
+                <th data-key="quantity">Quantity<div class="resizer"></div></th>
+                <th data-key="barcode">Barcode<div class="resizer"></div></th>
+                <th data-key="require_serial_number">Requires S/N<div class="resizer"></div></th>
+                <th data-key="image_url">Image URL<div class="resizer"></div></th>
+                <th data-key="supplier">Supplier<div class="resizer"></div></th>
+                <th data-key="supplier_link">Supplier Link<div class="resizer"></div></th>
+                <th data-key="min_stock">Min Stock<div class="resizer"></div></th>
+                <th data-key="bin">Bin<div class="resizer"></div></th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data will be dynamically inserted here -->
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tableBody = document.querySelector('#data-table tbody');
+            let tableData = [];
+
+            const updateTable = (data) => {
+                tableBody.innerHTML = '';
+                data.forEach(item => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${item.id ?? 'N/A'}</td>
+                        <td>${item.model_number ?? 'N/A'}</td>
+                        <td>${item.alias ?? 'N/A'}</td>
+                        <td>${item.type ?? 'N/A'}</td>
+                        <td>${item.quantity ?? 'N/A'}</td>
+                        <td>${item.barcode ?? 'N/A'}</td>
+                        <td style="text-align: center;"><input type="checkbox" ${item.require_serial_number ? 'checked' : ''} disabled></td>
+                        <td>${item.image_url ?? 'N/A'}</td>
+                        <td>${item.supplier ?? 'N/A'}</td>
+                        <td>${item.supplier_link ?? 'N/A'}</td>
+                        <td>${item.min_stock ?? 'N/A'}</td>
+                        <td>${item.bin ?? 'N/A'}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            };
+
+            const sortData = (key, ascending = true) => {
+                tableData.sort((a, b) => {
+                    if (a[key] < b[key]) return ascending ? -1 : 1;
+                    if (a[key] > b[key]) return ascending ? 1 : -1;
+                    return 0;
+                });
+                updateTable(tableData);
+            };
+
+            document.querySelectorAll('#data-table thead th').forEach(header => {
+                header.addEventListener('click', () => {
+                    const key = header.getAttribute('data-key');
+                    const ascending = !header.classList.contains('ascending');
+                    document.querySelectorAll('#data-table thead th').forEach(h => h.classList.remove('ascending', 'descending'));
+                    header.classList.toggle('ascending', ascending);
+                    header.classList.toggle('descending', !ascending);
+                    sortData(key, ascending);
+                });
+            });
+
+            // Fetch initial data
+            fetch('/api/get-data')
+                .then(response => response.json())
+                .then(data => {
+                    tableData = data;
+                    updateTable(data);
+                })
+                .catch(error => console.error('Error fetching data:', error));
+
+            // WebSocket setup
+            const ws = new WebSocket(`ws://${window.location.host}`);
+
+            ws.onmessage = (event) => {
+                const data = JSON.parse(event.data);
+                tableData = data;
+                updateTable(data);
+            };
+
+            ws.onopen = () => {
+                console.log('WebSocket connection established');
+            };
+
+            ws.onclose = () => {
+                console.log('WebSocket connection closed');
+            };
+
+            ws.onerror = (error) => {
+                console.error('WebSocket error:', error);
+            };
+
+            // Resizable columns
+            const resizers = document.querySelectorAll('.resizer');
+            let startX, startWidth;
+
+            resizers.forEach(resizer => {
+                resizer.addEventListener('mousedown', (e) => {
+                    startX = e.pageX;
+                    startWidth = resizer.parentElement.offsetWidth;
+                    document.addEventListener('mousemove', resizeColumn);
+                    document.addEventListener('mouseup', stopResize);
+                });
+
+                const resizeColumn = (e) => {
+                    const newWidth = startWidth + (e.pageX - startX);
+                    resizer.parentElement.style.width = `${newWidth}px`;
+                };
+
+                const stopResize = () => {
+                    document.removeEventListener('mousemove', resizeColumn);
+                    document.removeEventListener('mouseup', stopResize);
+                };
+            });
+        });
+    </script>
 </body>
 </html>

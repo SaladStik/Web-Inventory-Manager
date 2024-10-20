@@ -1,13 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const { validateUser } = require('./database'); // Assuming you have a database.js file with validateUser function
+const { validateUser, getProductData } = require('./database');
+const WebSocket = require('ws');
 
 const app = express();
 const port = 3000;
 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'public'))); // Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
@@ -27,6 +28,44 @@ app.post('/login', async (req, res) => {
     }
 });
 
-app.listen(port, () => {
+app.get('/api/get-data', async (req, res) => {
+    try {
+        const data = await getProductData();
+        res.json(data);
+    } catch (err) {
+        console.error('Error fetching product data:', err);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+});
+
+const server = app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
+
+// WebSocket server setup
+const wss = new WebSocket.Server({ server });
+
+wss.on('connection', (ws) => {
+    console.log('Client connected');
+
+    ws.on('close', () => {
+        console.log('Client disconnected');
+    });
+});
+
+// Function to broadcast data to all connected clients
+const broadcastData = async () => {
+    try {
+        const data = await getProductData();
+        wss.clients.forEach((client) => {
+            if (client.readyState === WebSocket.OPEN) {
+                client.send(JSON.stringify(data));
+            }
+        });
+    } catch (err) {
+        console.error('Error broadcasting data:', err);
+    }
+};
+
+// Example: Periodically broadcast data every 10 seconds
+setInterval(broadcastData, 10000);
