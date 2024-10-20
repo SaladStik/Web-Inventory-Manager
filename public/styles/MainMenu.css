@@ -9,9 +9,9 @@ td.checkbox-cell {
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     margin: 20px;
-    background-color: #f4f4f4;
+    background: linear-gradient(to right, rgba(255, 0, 0, 0.5) 15%, rgba(37, 117, 252, 0.5) 100%);
     color: #333;
 }
 

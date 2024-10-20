@@ -1,0 +1,597 @@
+ INFO Started local extension host with pid 24100.
+log.ts:429  WARN [twxs.cmake]: Cannot register 'cmake.cmakePath'. This property is already registered.
+log.ts:439   ERR Extension 'ms-vscode.cpptools' CANNOT register tool without name and modelDescription: {"name":"cpptools-lmtool-configuration","toolReferenceName":"cpp","displayName":"C/C++ configuration","canBeReferencedInPrompt":true,"userDescription":"Configuration of the active C or C++ file, like language standard version and target platform.","modelDescription":"For the active C or C++ file, this tool provides: the language (C, C++, or CUDA), the language standard version (such as C++11, C++14, C++17, or C++20), the compiler (such as GCC, Clang, or MSVC), the target platform (such as x86, x64, or ARM), and the target architecture (such as 32-bit or 64-bit).","icon":"$(file-code)","when":"(config.C_Cpp.experimentalFeatures =~ /^[eE]nabled$/)","supportedContentTypes":["text/plain"]}
+console.ts:137 [Extension Host] Congratulations, your extension "ckolkman.vscode-postgres" is now active!
+log.ts:419  INFO [perf] Render performance baseline is 22ms
+log.ts:429  WARN [csdevkit]: Couldn't find message for key commands.selectLaunchTargetFramework.
+log.ts:429  WARN [perf] Renderer reported VERY LONG TASK (404ms), starting profiling session '0b38ac29-4fc7-4f5c-b7e5-97dff4b9f799'
+console.ts:137 [Extension Host] [INFO] 2024-10-20T11:31:18.645Z - Translations initialized.
+console.ts:137 [Extension Host] [INFO] 2024-10-20T11:31:18.649Z - Extension activated!
+log.ts:439   ERR [Extension Host] (node:24100) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+(Use `Code --trace-deprecation ...` to show where the warning was created)
+console.ts:137 [Extension Host] (node:24100) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+(Use `Code --trace-deprecation ...` to show where the warning was created)
+K_i @ console.ts:137
+TMScopeRegistry.ts:46 Overwriting grammar scope name to file mapping for scope source.java.
+Old grammar file: file:///c%3A/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/extensions/java/syntaxes/java.tmLanguage.json.
+New grammar file: file:///c%3A/Users/popey/.vscode/extensions/redhat.java-1.35.1-win32-x64/language-support/java/java.tmLanguage.json
+register @ TMScopeRegistry.ts:46
+TMScopeRegistry.ts:46 Overwriting grammar scope name to file mapping for scope source.groovy.
+Old grammar file: file:///c%3A/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/extensions/groovy/syntaxes/groovy.tmLanguage.json.
+New grammar file: file:///c%3A/Users/popey/.vscode/extensions/vscjava.vscode-gradle-3.16.4/syntaxes/groovy.tmLanguage.json
+register @ TMScopeRegistry.ts:46
+console.ts:137 [Extension Host] Congratulations, your extension "Charactercount" is now active!
+TMScopeRegistry.ts:46 Overwriting grammar scope name to file mapping for scope source.java.
+Old grammar file: file:///c%3A/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/extensions/java/syntaxes/java.tmLanguage.json.
+New grammar file: file:///c%3A/Users/popey/.vscode/extensions/redhat.java-1.35.1-win32-x64/language-support/java/java.tmLanguage.json
+register @ TMScopeRegistry.ts:46
+TMScopeRegistry.ts:46 Overwriting grammar scope name to file mapping for scope source.groovy.
+Old grammar file: file:///c%3A/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/extensions/groovy/syntaxes/groovy.tmLanguage.json.
+New grammar file: file:///c%3A/Users/popey/.vscode/extensions/vscjava.vscode-gradle-3.16.4/syntaxes/groovy.tmLanguage.json
+register @ TMScopeRegistry.ts:46
+console.ts:137 [Extension Host] You
+console.ts:137 [Extension Host] Uncommitted changes
+console.ts:137 [Extension Host]  ⟷ 
+console.ts:137 [Extension Host] Changes   
+console.ts:137 [Extension Host] Working Tree
+console.ts:137 [Extension Host]   |  
+console.ts:137 [Extension Host]  
+console.ts:137 [Extension Host]  $(history) 40 seconds ago
+console.ts:137 [Extension Host] (October 20th, 2024 5:33 AM)
+console.ts:137 [Extension Host] 
+2console.ts:137 [Extension Host]  
+console.ts:137 [Extension Host] You
+console.ts:137 [Extension Host] Uncommitted changes
+console.ts:137 [Extension Host] Changes   
+console.ts:137 [Extension Host]  ⟷ 
+console.ts:137 [Extension Host] Working Tree
+console.ts:137 [Extension Host]   |  
+console.ts:137 [Extension Host]  
+console.ts:137 [Extension Host]  $(history) 42 seconds ago
+console.ts:137 [Extension Host] (October 20th, 2024 5:33 AM)
+console.ts:137 [Extension Host] 
+2console.ts:137 [Extension Host]  
+console.ts:137 [Extension Host] You
+console.ts:137 [Extension Host] Uncommitted changes
+console.ts:137 [Extension Host] Changes   
+console.ts:137 [Extension Host]  ⟷ 
+console.ts:137 [Extension Host] Working Tree
+console.ts:137 [Extension Host]   |  
+console.ts:137 [Extension Host]  
+console.ts:137 [Extension Host]  $(history) 43 seconds ago
+console.ts:137 [Extension Host] (October 20th, 2024 5:33 AM)
+console.ts:137 [Extension Host] 
+2console.ts:137 [Extension Host]  
+console.ts:137 [Extension Host] You
+console.ts:137 [Extension Host] Uncommitted changes
+console.ts:137 [Extension Host] Changes   
+console.ts:137 [Extension Host]  ⟷ 
+console.ts:137 [Extension Host] Working Tree
+console.ts:137 [Extension Host]   |  
+console.ts:137 [Extension Host]  
+console.ts:137 [Extension Host]  $(history) 44 seconds ago
+console.ts:137 [Extension Host] (October 20th, 2024 5:33 AM)
+console.ts:137 [Extension Host] 
+2console.ts:137 [Extension Host]  
+console.ts:137 [Extension Host] The title element represents the document&#39;s title or name. Authors should use titles that identify their documents even when they are used out of context, for example in a user&#39;s history or bookmarks, or in search results. The document&#39;s title is often different from its first heading, since the first heading does not have to stand alone when taken out of context.
+console.ts:137 [Extension Host] MDN Reference
+2console.ts:137 [Extension Host] Creates an Express application. The express() function is a top-level function exported by the express module.
+log.ts:439   ERR An unknown error occurred. Please consult the log for more details.
+console.ts:137 [Extension Host] This is a built-in middleware function in Express. It serves static files and is based on serve-static.
+console.ts:137 [Extension Host] Could not find name &#39;Client&#39;. Did you mean &#39;client&#39;?
+console.ts:137 [Extension Host] &#39;client&#39; is declared but its value is never read.
+console.ts:137 [Extension Host] You
+console.ts:137 [Extension Host] Uncommitted changes
+console.ts:137 [Extension Host] Changes   
+console.ts:137 [Extension Host]  ⟷ 
+console.ts:137 [Extension Host] Working Tree
+console.ts:137 [Extension Host]   |  
+console.ts:137 [Extension Host]  
+console.ts:137 [Extension Host]  $(history) 20 seconds ago
+console.ts:137 [Extension Host] (October 20th, 2024 5:41 AM)
+console.ts:137 [Extension Host] 
+2console.ts:137 [Extension Host]  
+2console.ts:137 [Extension Host] Creates an Express application. The express() function is a top-level function exported by the express module.
+console.ts:137 [Extension Host] The th element represents a header cell in a table.
+console.ts:137 [Extension Host] MDN Reference
+console.ts:137 [Extension Host] The th element represents a header cell in a table.
+console.ts:137 [Extension Host] MDN Reference
+log.ts:439   ERR An unknown error occurred. Please consult the log for more details.
+log.ts:439   ERR Session already stored for vs.editor.ICodeEditor:2@file:///c%3A/Users/SyncthingServiceAcct/Class%20work/Projects/Converting%20the%20inventory%20manager%20to%20a%20web%20app/login-system/public/main-menu.html: Error: Session already stored for vs.editor.ICodeEditor:2@file:///c%3A/Users/SyncthingServiceAcct/Class%20work/Projects/Converting%20the%20inventory%20manager%20to%20a%20web%20app/login-system/public/main-menu.html
+    at c7e.createSession (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1501:38355)
+    at async p7e.reviewEdits (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:31752)
+console.ts:137 [Extension Host] The th element represents a header cell in a table.
+console.ts:137 [Extension Host] MDN Reference
+console.ts:137 [Extension Host] The th element represents a header cell in a table.
+console.ts:137 [Extension Host] MDN Reference
+2log.ts:439   ERR Session already stored for vs.editor.ICodeEditor:2@file:///c%3A/Users/SyncthingServiceAcct/Class%20work/Projects/Converting%20the%20inventory%20manager%20to%20a%20web%20app/login-system/public/main-menu.html: Error: Session already stored for vs.editor.ICodeEditor:2@file:///c%3A/Users/SyncthingServiceAcct/Class%20work/Projects/Converting%20the%20inventory%20manager%20to%20a%20web%20app/login-system/public/main-menu.html
+    at c7e.createSession (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1501:38355)
+    at async p7e.reviewEdits (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:31752)
+console.ts:137 [Extension Host] [relatedFiles] unknown language html
+K_i @ console.ts:137
+console.ts:137 [Extension Host] [node.js fs] readdir with filetypes failed with error:  Error: ENOENT: no such file or directory, scandir 'c:\Users\SyncthingServiceAcct\Class work\Projects\Converting the inventory manager to a web app\login-system\public\...'
+    at Object.readdir (node:internal/original-fs/promises:950:18)
+    at f2 (file:///c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:88655)
+    at Object.Bh (file:///c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:88584)
+    at oh.readdir (file:///c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:166:14575)
+    at Object.readDirectory (file:///c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:7119)
+K_i @ console.ts:137
+log.ts:439   ERR An unknown error occurred. Please consult the log for more details.
+console.ts:137 [Extension Host] [node.js fs] readdir with filetypes failed with error:  Error: ENOENT: no such file or directory, scandir 'c:\Users\SyncthingServiceAcct\Class work\Projects\Converting the inventory manager to a web app\login-system\public\...'
+    at Object.readdir (node:internal/original-fs/promises:950:18)
+    at f2 (file:///c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:88655)
+    at Object.Bh (file:///c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:88584)
+    at oh.readdir (file:///c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:166:14575)
+    at Object.readDirectory (file:///c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:7119)
+K_i @ console.ts:137
+log.ts:439   ERR An unknown error occurred. Please consult the log for more details.
+console.ts:137 [Extension Host] [node.js fs] readdir with filetypes failed with error:  Error: ENOENT: no such file or directory, scandir 'c:\Users\SyncthingServiceAcct\Class work\Projects\Converting the inventory manager to a web app\login-system\public\...'
+    at Object.readdir (node:internal/original-fs/promises:950:18)
+    at f2 (file:///c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:88655)
+    at Object.Bh (file:///c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:88584)
+    at oh.readdir (file:///c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:166:14575)
+    at Object.readDirectory (file:///c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:7119)
+K_i @ console.ts:137
+2log.ts:439   ERR An unknown error occurred. Please consult the log for more details.
+console.ts:137 [Extension Host] Specifies a prioritized list of font family names or generic family names
+console.ts:137 [Extension Host] A user agent iterates through the list of family names until it matches an available font that contains a glyph for the character to be rendered
+console.ts:137 [Extension Host] Syntax: &lt;family
+console.ts:137 [Extension Host] name&gt;
+console.ts:137 [Extension Host] MDN Reference
+console.ts:137 [Extension Host] Specifies a prioritized list of font family names or generic family names
+console.ts:137 [Extension Host] A user agent iterates through the list of family names until it matches an available font that contains a glyph for the character to be rendered
+console.ts:137 [Extension Host] Syntax: &lt;family
+console.ts:137 [Extension Host] name&gt;
+console.ts:137 [Extension Host] MDN Reference
+2console.ts:137 [Extension Host] (Edge 12, Firefox 1, Safari 1, Chrome 1, IE 3, Opera 3)
+log.ts:439   ERR An unknown error occurred. Please consult the log for more details.
+console.ts:137 [Extension Host] The body element represents the content of the document.
+console.ts:137 [Extension Host] MDN Reference
+4log.ts:439   ERR An unknown error occurred. Please consult the log for more details.
+log.ts:439   ERR Illegal value for lineNumber: Error: Illegal value for lineNumber
+    at Om.getLineLength (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:253:4340)
+    at plt.fixup (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1501:28333)
+    at p7e.SHOW_REQUEST (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:26230)
+    at async p7e.I (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:19778)
+    at async p7e.run (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:19547)
+console.ts:137 [Extension Host] Selector Specificity
+console.ts:137 [Extension Host] : (0, 2, 1)
+console.ts:137 [Extension Host] Selector Specificity
+console.ts:137 [Extension Host] : (0, 2, 1)
+console.ts:137 [Extension Host] Sets the color of the elements accent
+console.ts:137 [Extension Host] Syntax: auto | &lt;color&gt;
+console.ts:137 [Extension Host] MDN Reference
+console.ts:137 [Extension Host] (Edge 93, Firefox 92, Safari 15, Chrome 93, Opera 79)
+console.ts:137 [Extension Host] [relatedFiles] unknown language css
+K_i @ console.ts:137
+2log.ts:439   ERR An unknown error occurred. Please consult the log for more details.
+console.ts:137 [Extension Host] You
+console.ts:137 [Extension Host] Uncommitted changes
+console.ts:137 [Extension Host] Changes   
+console.ts:137 [Extension Host]  ⟷ 
+console.ts:137 [Extension Host] Working Tree
+console.ts:137 [Extension Host]   |  
+console.ts:137 [Extension Host]  
+console.ts:137 [Extension Host]  $(history) 17 seconds ago
+console.ts:137 [Extension Host] (October 20th, 2024 5:55 AM)
+console.ts:137 [Extension Host] 
+2console.ts:137 [Extension Host]  
+console.ts:137 [Extension Host] See Real World Examples From GitHub
+console.ts:137 [Extension Host] 
+log.ts:439   ERR Illegal value for lineNumber: Error: Illegal value for lineNumber
+    at Om.getLineMaxColumn (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:254:112)
+    at _a.getBottomForLineNumber (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:263:1594)
+    at vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:15647
+    at vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:16494
+    at NQ.value (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:13598)
+    at x.B (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:733)
+    at x.fire (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:951)
+    at NQ.value (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:6444)
+    at x.B (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:733)
+    at x.fire (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:951)
+    at jBe.updateStatus (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:550:23659)
+    at d7e.z (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:6217)
+    at d7e.cancel (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:6385)
+    at p7e.CANCEL (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:27148)
+    at p7e.I (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:19757)
+    at async p7e.run (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:19547)
+log.ts:439   ERR Illegal value for lineNumber: Error: Illegal value for lineNumber
+    at Om.getLineMaxColumn (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:254:112)
+    at _a.getBottomForLineNumber (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:263:1594)
+    at vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:15647
+    at vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:16494
+    at NQ.value (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:13598)
+    at x.B (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:733)
+    at x.fire (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:951)
+    at NQ.value (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:6444)
+    at x.B (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:733)
+    at x.fire (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:951)
+    at NQ.value (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:550:18296)
+    at x.B (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:733)
+    at x.fire (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:951)
+    at Sx.wb (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:600:15270)
+    at NQ.value (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:600:14601)
+    at x.B (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:733)
+    at x.C (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:803)
+    at x.fire (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:1020)
+    at NQ.value (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:6444)
+    at x.B (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:733)
+    at x.fire (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:951)
+    at aoi.wb (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:265:26000)
+    at aoi.U (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:265:14459)
+    at aoi.splice (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:265:12904)
+    at vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:263:45177
+    at Array.forEach (<anonymous>)
+    at rIi.splice (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:263:45164)
+    at vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:308:7637
+    at O9.bufferEvents (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:3811)
+    at uAi.splice (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:308:7613)
+    at uAi.splice (vscode-file://vscode-app/c:/Users/popey/A
+log.ts:439   ERR Illegal value for lineNumber: Error: Illegal value for lineNumber
+    at Om.getLineMaxColumn (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:254:112)
+    at _a.getBottomForLineNumber (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:263:1594)
+    at vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:15647
+    at vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:16494
+    at NQ.value (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:13598)
+    at x.B (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:733)
+    at x.fire (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:951)
+    at NQ.value (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:6444)
+    at x.B (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:733)
+    at x.fire (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:951)
+    at NQ.value (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:550:18296)
+    at x.B (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:733)
+    at x.fire (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:951)
+    at NQ.value (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:600:16682)
+    at x.B (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:733)
+    at x.fire (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:951)
+    at R0.renderFollowups (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:532:10903)
+    at Sx.tb (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:600:12349)
+    at Sx.qb (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:600:11545)
+    at NQ.value (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:600:17770)
+    at x.B (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:733)
+    at x.fire (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:951)
+    at NQ.value (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:503:1834)
+    at x.B (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:733)
+    at x.fire (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:951)
+    at pNe.dispose (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:499:6722)
+    at As.deleteAndDispose (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:3727)
+    at w_e.clearSession (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1939:34513)
+    at vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1501:36778
+    at vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:1122
+    at Object.dispose (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:8:626)
+    at De (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:750)
+    at Hni.clear (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:1357)
+    at Hni.dispose (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:1286)
+    at c7e.t (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1501:39327)
+    at c7e.releaseSession (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1501:38981)
+    at p7e.CANCEL (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:27319)
+    at p7e.I (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:19757)
+    at async p7e.run (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:19547)
+log.ts:439   ERR Illegal value for lineNumber: Error: Illegal value for lineNumber
+    at Om.getLineMaxColumn (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:254:112)
+    at _a.getBottomForLineNumber (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:263:1594)
+    at vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:15647
+    at vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:16494
+    at NQ.value (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:13598)
+    at x.B (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:733)
+    at x.fire (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:951)
+    at NQ.value (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:6444)
+    at x.B (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:733)
+    at x.fire (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:951)
+    at jBe.updateInfo (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:550:22999)
+    at jBe.reset (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:550:23903)
+    at jBe.reset (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:550:24734)
+    at g7e.hide (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:15998)
+    at p7e.K (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:27952)
+    at p7e.CANCEL (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:27347)
+    at p7e.I (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:19757)
+    at async p7e.run (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:19547)
+log.ts:439   ERR Illegal value for lineNumber: Error: Illegal value for lineNumber
+    at Om.getLineMaxColumn (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:254:112)
+    at _a.getBottomForLineNumber (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:263:1594)
+    at vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:15647
+    at vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:16494
+    at NQ.value (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:13598)
+    at x.B (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:733)
+    at x.fire (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:951)
+    at NQ.value (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:6444)
+    at x.B (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:733)
+    at x.fire (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:951)
+    at NQ.value (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:550:18221)
+    at x.B (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:733)
+    at x.C (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:803)
+    at x.fire (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:1020)
+    at set viewModel (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:600:6344)
+    at Sx.setModel (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:600:17423)
+    at jBe.reset (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:550:23934)
+    at jBe.reset (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:550:24734)
+    at g7e.hide (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:15998)
+    at p7e.K (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:27952)
+    at p7e.CANCEL (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:27347)
+    at p7e.I (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:19757)
+    at async p7e.run (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:19547)
+log.ts:439   ERR Illegal value for lineNumber: Error: Illegal value for lineNumber
+    at Om.getLineMaxColumn (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:254:112)
+    at _a.getBottomForLineNumber (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:263:1594)
+    at vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:15647
+    at vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:16494
+    at NQ.value (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:13598)
+    at x.B (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:733)
+    at x.fire (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:951)
+    at NQ.value (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:6444)
+    at x.B (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:733)
+    at x.fire (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:951)
+    at NQ.value (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:550:18296)
+    at x.B (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:733)
+    at x.fire (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:951)
+    at NQ.value (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:600:16682)
+    at x.B (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:733)
+    at x.fire (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:951)
+    at R0.renderFollowups (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:532:10903)
+    at Sx.tb (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:600:12349)
+    at Sx.qb (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:600:11499)
+    at Sx.setModel (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:600:18025)
+    at jBe.reset (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:550:23934)
+    at jBe.reset (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:550:24734)
+    at g7e.hide (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:15998)
+    at p7e.K (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:27952)
+    at p7e.CANCEL (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:27347)
+    at p7e.I (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:19757)
+    at async p7e.run (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:19547)
+log.ts:439   ERR Illegal value for lineNumber: Error: Illegal value for lineNumber
+    at Om.getLineMaxColumn (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:254:112)
+    at _a.getBottomForLineNumber (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:263:1594)
+    at vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:15647
+    at vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:16494
+    at NQ.value (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:13598)
+    at x.B (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:733)
+    at x.fire (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:951)
+    at NQ.value (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:6444)
+    at x.B (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:733)
+    at x.fire (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:30:951)
+    at jBe.reset (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:550:24015)
+    at jBe.reset (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:550:24734)
+    at g7e.hide (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:15998)
+    at p7e.K (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:27952)
+    at p7e.CANCEL (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:27347)
+    at p7e.I (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:19757)
+    at async p7e.run (vscode-file://vscode-app/c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:1504:19547)
+log.ts:439   ERR An unknown error occurred. Please consult the log for more details.
+console.ts:137 [Extension Host] This attribute contains the value for the
+console.ts:137 [Extension Host] or
+console.ts:137 [Extension Host] attribute, depending on which is used.
+console.ts:137 [Extension Host] Selects a table&#39;s border model
+console.ts:137 [Extension Host] Syntax: collapse | separate
+console.ts:137 [Extension Host] MDN Reference
+console.ts:137 [Extension Host] (Edge 12, Firefox 1, Safari 1, Chrome 1, IE 5, Opera 4)
+console.ts:137 [Extension Host] Shorthand property to set values for the thickness of the margin area
+console.ts:137 [Extension Host] If left is omitted, it is the same as right
+console.ts:137 [Extension Host] If bottom is omitted it is the same as top, if right is omitted it is the same as top
+console.ts:137 [Extension Host] Negative values for margin properties are allowed, but there may be implementation
+console.ts:137 [Extension Host] specific limits
+console.ts:137 [Extension Host] MDN Reference
+console.ts:137 [Extension Host] (Edge 12, Firefox 1, Safari 1, Chrome 1, IE 3, Opera 3)
+console.ts:137 [Extension Host] Syntax: <length> | <percentage> | auto
+2log.ts:439   ERR An unknown error occurred. Please consult the log for more details.
+console.ts:137 [Extension Host] The div element has no special meaning at all. It represents its children. It can be used with the class, lang, and title attributes to mark up semantics common to a group of consecutive elements.
+console.ts:137 [Extension Host] MDN Reference
+console.ts:137 [Extension Host] The div element has no special meaning at all. It represents its children. It can be used with the class, lang, and title attributes to mark up semantics common to a group of consecutive elements.
+console.ts:137 [Extension Host] MDN Reference
+console.ts:137 [Extension Host] A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the
+console.ts:137 [Extension Host] or functions like the method
+console.ts:137 [Extension Host] MDN Reference
+log.ts:439   ERR An unknown error occurred. Please consult the log for more details.
+console.ts:137 [Extension Host] class selectors
+console.ts:137 [Extension Host] .
+console.ts:137 [Extension Host] [node.js fs] readdir with filetypes failed with error:  Error: ENOENT: no such file or directory, scandir 'c:\Users\SyncthingServiceAcct\Class work\Projects\Converting the inventory manager to a web app\login-system\public\>Req'
+    at Object.readdir (node:internal/original-fs/promises:950:18)
+    at f2 (file:///c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:88655)
+    at Object.Bh (file:///c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:88584)
+    at oh.readdir (file:///c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:166:14575)
+    at Object.readDirectory (file:///c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:7119)
+K_i @ console.ts:137
+log.ts:439   ERR An unknown error occurred. Please consult the log for more details.
+console.ts:137 [Extension Host] The div element has no special meaning at all. It represents its children. It can be used with the class, lang, and title attributes to mark up semantics common to a group of consecutive elements.
+console.ts:137 [Extension Host] MDN Reference
+console.ts:137 [Extension Host] The div element has no special meaning at all. It represents its children. It can be used with the class, lang, and title attributes to mark up semantics common to a group of consecutive elements.
+console.ts:137 [Extension Host] MDN Reference
+4log.ts:439   ERR An unknown error occurred. Please consult the log for more details.
+console.ts:137 [Extension Host] A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the
+console.ts:137 [Extension Host] or functions like the method
+console.ts:137 [Extension Host] MDN Reference
+console.ts:137 [Extension Host] class selectors
+console.ts:137 [Extension Host] .
+log.ts:439   ERR An unknown error occurred. Please consult the log for more details.
+console.ts:137 [Extension Host] The div element has no special meaning at all. It represents its children. It can be used with the class, lang, and title attributes to mark up semantics common to a group of consecutive elements.
+console.ts:137 [Extension Host] MDN Reference
+console.ts:137 [Extension Host] Attaches one or more drop
+console.ts:137 [Extension Host] shadows to the box
+console.ts:137 [Extension Host] The property is a comma
+console.ts:137 [Extension Host] separated list of shadows, each specified by 2
+console.ts:137 [Extension Host] 4 length values, an optional color, and an optional &#39;inset&#39; keyword
+console.ts:137 [Extension Host] Omitted lengths are 0; omitted colors are a user agent chosen color
+console.ts:137 [Extension Host] MDN Reference
+console.ts:137 [Extension Host] (Edge 12, Firefox 4, Safari 5, Chrome 10, IE 9, Opera 10)
+console.ts:137 [Extension Host] Syntax: none | <shadow>
+log.ts:439   ERR An unknown error occurred. Please consult the log for more details.
+console.ts:137 [Extension Host] Shorthand property for setting border width, style, and color
+console.ts:137 [Extension Host] Syntax: &lt;line
+console.ts:137 [Extension Host] MDN Reference
+console.ts:137 [Extension Host] (Edge 12, Firefox 1, Safari 1, Chrome 1, IE 4, Opera 3)
+console.ts:137 [Extension Host] width> || <line
+console.ts:137 [Extension Host] style> || <color>
+console.ts:137 [Extension Host] Shorthand property for setting border width, style, and color
+console.ts:137 [Extension Host] Syntax: &lt;line
+console.ts:137 [Extension Host] MDN Reference
+console.ts:137 [Extension Host] (Edge 12, Firefox 1, Safari 1, Chrome 1, IE 4, Opera 3)
+console.ts:137 [Extension Host] width> || <line
+console.ts:137 [Extension Host] style> || <color>
+console.ts:137 [Extension Host] Shorthand property for setting border width, style, and color
+console.ts:137 [Extension Host] Syntax: &lt;line
+console.ts:137 [Extension Host] MDN Reference
+console.ts:137 [Extension Host] (Edge 12, Firefox 1, Safari 1, Chrome 1, IE 4, Opera 3)
+console.ts:137 [Extension Host] width> || <line
+console.ts:137 [Extension Host] style> || <color>
+console.ts:137 [Extension Host] Shorthand property for setting border width, style, and color
+console.ts:137 [Extension Host] Syntax: &lt;line
+console.ts:137 [Extension Host] MDN Reference
+console.ts:137 [Extension Host] (Edge 12, Firefox 1, Safari 1, Chrome 1, IE 4, Opera 3)
+console.ts:137 [Extension Host] width> || <line
+console.ts:137 [Extension Host] style> || <color>
+console.ts:137 [Extension Host] Shorthand property for setting border width, style, and color
+console.ts:137 [Extension Host] Syntax: &lt;line
+console.ts:137 [Extension Host] MDN Reference
+console.ts:137 [Extension Host] (Edge 12, Firefox 1, Safari 1, Chrome 1, IE 4, Opera 3)
+console.ts:137 [Extension Host] width> || <line
+console.ts:137 [Extension Host] style> || <color>
+console.ts:137 [Extension Host] Shorthand property for setting border width, style, and color
+console.ts:137 [Extension Host] Syntax: &lt;line
+console.ts:137 [Extension Host] MDN Reference
+console.ts:137 [Extension Host] (Edge 12, Firefox 1, Safari 1, Chrome 1, IE 4, Opera 3)
+console.ts:137 [Extension Host] width> || <line
+console.ts:137 [Extension Host] style> || <color>
+console.ts:137 [Extension Host] Shorthand property for setting border width, style, and color
+console.ts:137 [Extension Host] Syntax: &lt;line
+console.ts:137 [Extension Host] MDN Reference
+console.ts:137 [Extension Host] (Edge 12, Firefox 1, Safari 1, Chrome 1, IE 4, Opera 3)
+console.ts:137 [Extension Host] width> || <line
+console.ts:137 [Extension Host] style> || <color>
+console.ts:137 [Extension Host] Specifies the width of the content area, padding area or border area
+console.ts:137 [Extension Host] of certain boxes
+console.ts:137 [Extension Host] MDN Reference
+console.ts:137 [Extension Host] depending on 'box
+console.ts:137 [Extension Host] sizing'
+console.ts:137 [Extension Host] (Edge 12, Firefox 1, Safari 1, Chrome 1, IE 4, Opera 3)
+console.ts:137 [Extension Host] Syntax: auto | <length> | <percentage> | min
+console.ts:137 [Extension Host] content | max
+2console.ts:137 [Extension Host] content | fit
+console.ts:137 [Extension Host] content
+console.ts:137 [Extension Host] <length
+console.ts:137 [Extension Host] percentage>
+console.ts:137 [Extension Host] Sets the background color of an element
+console.ts:137 [Extension Host] Syntax: &lt;color&gt;
+console.ts:137 [Extension Host] MDN Reference
+console.ts:137 [Extension Host] (Edge 12, Firefox 1, Safari 1, Chrome 1, IE 4, Opera 3)
+console.ts:137 [Extension Host] Defines the radii of the outer border edge
+console.ts:137 [Extension Host] MDN Reference
+console.ts:137 [Extension Host] (Edge 12, Firefox 4, Safari 5, Chrome 4, IE 9, Opera 10)
+console.ts:137 [Extension Host] Syntax: <length
+console.ts:137 [Extension Host] percentage>
+console.ts:137 [Extension Host] 1,4
+console.ts:137 [Extension Host] 
+console.ts:137 [Extension Host] /<length
+console.ts:137 [Extension Host] percentage>
+console.ts:137 [Extension Host] 1,4
+console.ts:137 [Extension Host] 
+console.ts:137 [Extension Host] ?
+webviewElement.ts:486 An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing.
+mountTo @ webviewElement.ts:486
+console.ts:137 [Extension Host] ViewColumn.Two
+console.ts:137 [Extension Host] ViewColumn.Three
+6console.ts:137 [Extension Host] ViewColumn.Two
+console.ts:137 [Extension Host] Specifies a prioritized list of font family names or generic family names
+console.ts:137 [Extension Host] A user agent iterates through the list of family names until it matches an available font that contains a glyph for the character to be rendered
+console.ts:137 [Extension Host] Syntax: &lt;family
+console.ts:137 [Extension Host] name&gt;
+console.ts:137 [Extension Host] MDN Reference
+console.ts:137 [Extension Host] (Edge 12, Firefox 1, Safari 1, Chrome 1, IE 3, Opera 3)
+2console.ts:137 [Extension Host] ViewColumn.Two
+log.ts:439   ERR An unknown error occurred. Please consult the log for more details.
+2console.ts:137 [Extension Host] ViewColumn.Two
+console.ts:137 [Extension Host] You
+console.ts:137 [Extension Host] Uncommitted changes
+console.ts:137 [Extension Host] Changes   
+console.ts:137 [Extension Host]  ⟷ 
+console.ts:137 [Extension Host] Working Tree
+console.ts:137 [Extension Host]   |  
+console.ts:137 [Extension Host]  
+console.ts:137 [Extension Host]  $(history) 14 seconds ago
+console.ts:137 [Extension Host] (October 20th, 2024 6:31 AM)
+console.ts:137 [Extension Host] 
+2console.ts:137 [Extension Host]  
+2log.ts:439   ERR An unknown error occurred. Please consult the log for more details.
+2console.ts:137 [Extension Host] ViewColumn.Two
+log.ts:439   ERR An unknown error occurred. Please consult the log for more details.
+10console.ts:137 [Extension Host] ViewColumn.Two
+console.ts:137 [Extension Host] A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the
+console.ts:137 [Extension Host] or functions like the method
+console.ts:137 [Extension Host] MDN Reference
+console.ts:137 [Extension Host] class selectors
+console.ts:137 [Extension Host] .
+5console.ts:137 [Extension Host] Creates an Express application. The express() function is a top-level function exported by the express module.
+2console.ts:137 [Extension Host] Examples:
+2console.ts:137 [Extension Host] Send JSON response.
+console.ts:137 [Extension Host] &#39;req&#39; is declared but its value is never read.
+textModel.ts:860 Uncaught Error: Illegal value for lineNumber
+    at Om.getLineMaxColumn (textModel.ts:860:10)
+    at _Te.computeSync (markerHoverParticipant.ts:75:27)
+    at Qot.computeSync (contentHoverComputer.ts:96:39)
+    at F0t.D (hoverOperation.ts:148:54)
+    at hoverOperation.ts:68:101
+    at si.a (hoverOperation.ts:217:63)
+    at si.h (async.ts:1038:8)
+    at si.g (async.ts:1033:9)
+    at functional.ts:22:17
+    at window.ts:144:6
+log.ts:439   ERR An unknown error occurred. Please consult the log for more details.
+2console.ts:137 [Extension Host] [node.js fs] readdir with filetypes failed with error:  Error: ENOENT: no such file or directory, scandir 'c:\Users\SyncthingServiceAcct\Class work\Projects\Converting the inventory manager to a web app\login-system\app'
+    at Object.readdir (node:internal/original-fs/promises:950:18)
+    at f2 (file:///c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:88655)
+    at Object.Bh (file:///c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:88584)
+    at oh.readdir (file:///c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:166:14575)
+    at Object.readDirectory (file:///c:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:7119)
+K_i @ console.ts:137
+log.ts:439   ERR An unknown error occurred. Please consult the log for more details.
+4console.ts:137 [Extension Host] Creates an Express application. The express() function is a top-level function exported by the express module.
+log.ts:419  INFO WAIT for session to end vs.editor.ICodeEditor:2 file:///c%3A/Users/SyncthingServiceAcct/Class%20work/Projects/Converting%20the%20inventory%20manager%20to%20a%20web%20app/login-system/server.js
+5console.ts:137 [Extension Host] ViewColumn.Two
+console.ts:137 [Extension Host] Received message: Object
+console.ts:137 [Extension Host] Click on Go to Settings button
+log.ts:429  WARN Settings pattern "application.*" doesn't match any settings
+console.ts:137 [Extension Host] ViewColumn.Two
+log.ts:439   ERR Unknown frame: 5e9dde1d-f2cb-47ef-9ec0-77f6c686d401: Error: Unknown frame: 5e9dde1d-f2cb-47ef-9ec0-77f6c686d401
+    at Yh.c (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:71:18725)
+    at Yh.stopFindInFrame (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:71:18427)
+    at Object.call (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:33:4877)
+    at Gf.s (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:31:19890)
+    at Gf.q (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:31:19413)
+    at Eo.value (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:31:18815)
+    at x.B (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:30:732)
+    at x.C (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:30:802)
+    at x.fire (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:30:1019)
+    at Eo.value (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:25:5323)
+    at x.B (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:30:732)
+    at x.fire (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:30:950)
+    at Eo.value (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:25:5507)
+    at x.B (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:30:732)
+    at x.fire (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:30:950)
+    at F (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:25:7758)
+    at IpcMainImpl.i (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:33:22565)
+    at IpcMainImpl.emit (node:events:519:28)
+    at WebContents.<anonymous> (node:electron/js2c/browser_init:2:82563)
+    at WebContents.emit (node:events:519:28)
+log.ts:429  WARN [perf] Renderer reported VERY LONG TASK (382ms), starting profiling session 'e5e65573-eb05-410c-88ec-bb1653aca912'
+log.ts:439   ERR Method not found: toJSON: CodeExpectedError: Method not found: toJSON
+    at Object.call (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:33:4948)
+    at Gf.s (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:31:19890)
+    at Gf.q (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:31:19413)
+    at Eo.value (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:31:18815)
+    at x.B (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:30:732)
+    at x.C (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:30:802)
+    at x.fire (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:30:1019)
+    at Eo.value (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:25:5323)
+    at x.B (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:30:732)
+    at x.fire (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:30:950)
+    at Eo.value (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:25:5507)
+    at x.B (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:30:732)
+    at x.fire (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:30:950)
+    at F (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:25:7758)
+    at IpcMainImpl.i (file:///C:/Users/popey/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-main/main.js:33:22565)
+    at IpcMainImpl.emit (node:events:519:28)
+    at WebContents.<anonymous> (node:electron/js2c/browser_init:2:82563)
+    at WebContents.emit (node:events:519:28)
+console.ts:137 [Extension Host] ViewColumn.Two
+console.ts:137 [Extension Host] Received message: Object
+console.ts:137 [Extension Host] Click on Open Inspector button
+webviewCommands.ts:32 Using standard dev tools to debug iframe based webview
+console.ts:137 [Extension Host] ViewColumn.Two
