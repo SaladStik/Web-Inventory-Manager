@@ -1,14 +1,30 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const fs = require('fs');
 const { validateUser, getProductData } = require('./database');
 const WebSocket = require('ws');
+
+// Load configuration
+const config = JSON.parse(fs.readFileSync(path.join(__dirname, 'config.json'), 'utf8'));
 
 const app = express();
 const port = 3000;
 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'))); // Serve static files from the 'public' directory
+
+// Serve images from the configured directory
+const imageDirectory = config.imageDirectory;
+console.log(`Serving images from: ${imageDirectory}`);
+
+// Middleware to log image requests
+app.use('/images', (req, res, next) => {
+    console.log(`Image request: ${req.url}`);
+    next();
+});
+
+app.use('/images', express.static(imageDirectory));
 
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
@@ -36,6 +52,22 @@ app.get('/api/get-data', async (req, res) => {
         console.error('Error fetching product data:', err);
         res.status(500).json({ message: 'Internal server error' });
     }
+});
+
+app.post('/api/update-config', (req, res) => {
+    const { imageDirectory } = req.body;
+
+    if (!imageDirectory) {
+        return res.status(400).json({ message: 'Invalid configuration' });
+    }
+
+    // Update the configuration file
+    fs.writeFileSync(path.join(__dirname, 'config.json'), JSON.stringify({ imageDirectory }, null, 2));
+
+    // Update the static file serving middleware
+    app.use('/images', express.static(imageDirectory));
+
+    res.status(200).json({ message: 'Configuration updated successfully' });
 });
 
 const server = app.listen(port, () => {

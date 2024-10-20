@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Configuration</title>
+</head>
+<body>
+    <h1>Update Configuration</h1>
+    <form id="config-form">
+        <label for="imageDirectory">Image Directory:</label>
+        <input type="text" id="imageDirectory" name="imageDirectory" required>
+        <button type="submit">Update</button>
+    </form>
+
+    <script>
+        document.getElementById('config-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const imageDirectory = document.getElementById('imageDirectory').value;
+
+            fetch('/api/update-config', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ imageDirectory })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+            })
+            .catch(error => {
+                console.error('Error updating configuration:', error);
+            });
+        });
+    </script>
+</body>
+</html>

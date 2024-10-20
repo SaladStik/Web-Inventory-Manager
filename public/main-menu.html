@@ -8,6 +8,13 @@
 </head>
 <body>
     <h1>Welcome to the Main Menu</h1>
+    <button id="view-config">View Config</button>
+
+    <script>
+        document.getElementById('view-config').addEventListener('click', function() {
+            window.location.href = 'config.html';
+        });
+    </script>
     <table id="data-table">
         <thead>
             <tr>
@@ -18,7 +25,7 @@
                 <th data-key="quantity">Quantity<div class="resizer"></div></th>
                 <th data-key="barcode">Barcode<div class="resizer"></div></th>
                 <th data-key="require_serial_number">Requires S/N<div class="resizer"></div></th>
-                <th data-key="image_url">Image URL<div class="resizer"></div></th>
+                <th data-key="image_url">Image<div class="resizer"></div></th>
                 <th data-key="supplier">Supplier<div class="resizer"></div></th>
                 <th data-key="supplier_link">Supplier Link<div class="resizer"></div></th>
                 <th data-key="min_stock">Min Stock<div class="resizer"></div></th>
@@ -30,14 +37,22 @@
         </tbody>
     </table>
 
+    <!-- The Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM fully loaded and parsed');
             const tableBody = document.querySelector('#data-table tbody');
             let tableData = [];
 
             const updateTable = (data) => {
                 tableBody.innerHTML = '';
                 data.forEach(item => {
+                    const imageUrl = item.image_url ? `/images/${item.image_url}` : '';
                     const row = document.createElement('tr');
                     row.innerHTML = `
                         <td>${item.id ?? 'N/A'}</td>
@@ -46,14 +61,26 @@
                         <td>${item.type ?? 'N/A'}</td>
                         <td>${item.quantity ?? 'N/A'}</td>
                         <td>${item.barcode ?? 'N/A'}</td>
-                        <td style="text-align: center;"><input type="checkbox" ${item.require_serial_number ? 'checked' : ''} disabled></td>
-                        <td>${item.image_url ?? 'N/A'}</td>
+                        <td><input type="checkbox" ${item.require_serial_number ? 'checked' : ''} disabled></td>
+                        <td class="preview-image-container">${imageUrl ? `<span class="click-to-view" data-url="${imageUrl}">Click To View Product</span>` : '<span class="no-image">No Image Available</span>'}</td>
                         <td>${item.supplier ?? 'N/A'}</td>
-                        <td>${item.supplier_link ?? 'N/A'}</td>
+                        <td><a href="${item.supplier_link ?? '#'}" target="_blank">${item.supplier_link ?? 'N/A'}</a></td>
                         <td>${item.min_stock ?? 'N/A'}</td>
                         <td>${item.bin ?? 'N/A'}</td>
                     `;
                     tableBody.appendChild(row);
+                });
+
+                // Add event listeners to "Click To View Product" for preview
+                document.querySelectorAll('.click-to-view').forEach(span => {
+                    span.addEventListener('click', function() {
+                        console.log('Image clicked:', this.dataset.url);
+                        const modal = document.getElementById('imageModal');
+                        const modalImg = document.getElementById('img01');
+                        modal.style.display = 'flex';
+                        modalImg.src = this.dataset.url;
+                        modalImg.style.transform = 'scale(1)'; // Reset zoom
+                    });
                 });
             };
 
@@ -129,6 +156,27 @@
                     document.removeEventListener('mouseup', stopResize);
                 };
             });
+
+            // Close the modal
+            const modal = document.getElementById('imageModal');
+            const span = document.getElementsByClassName('close')[0];
+            span.onclick = function() {
+                console.log('Close button clicked');
+                modal.style.display = 'none';
+            };
+
+            // Scroll to zoom
+            const modalImg = document.getElementById('img01');
+            let scale = 1;
+            modalImg.addEventListener('wheel', function(event) {
+                event.preventDefault();
+                scale += event.deltaY * -0.01;
+                scale = Math.min(Math.max(1, scale), 5); // Limit zoom scale between 1 and 5
+                modalImg.style.transform = `scale(${scale})`;
+            });
+
+            // Debugging: Ensure modal is hidden on startup
+            console.log('Modal display on startup:', modal.style.display);
         });
     </script>
 </body>

@@ -97,3 +97,106 @@ input[type="checkbox"]:hover {
     cursor: col-resize;
     user-select: none;
 }
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background: linear-gradient(to right, rgba(255, 0, 0, 0.5) 15%, rgba(37, 117, 252, 0.5) 100%); /* Gradient with transparency */
+    backdrop-filter: blur(5px); /* Blur background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+    transition: transform 0.25s ease; /* Smooth zoom transition */
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.preview-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 2px; /* Add padding to ensure 2px space around the image */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+.preview-image {
+    max-width: 100%;
+    max-height: 100px; /* Adjust this value as needed */
+}
+
+.empty-image {
+    width: calc(100% - 4px); /* Adjust width to account for padding */
+    height: calc(100% - 4px); /* Adjust height to account for padding */
+    background-color: transparent;
+}
+
+.click-to-view, .no-image {
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    line-height: 100px; /* Adjust this value to vertically center the text */
+    font-size: 14px; /* Adjust font size as needed */
+    font-family: 'Inter', sans-serif; /* Use the Inter font */
+}
+
+.click-to-view:hover {
+    text-decoration: underline; /* Underline on hover */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.no-image {
+    color: gray;
+    cursor: default;
+}
+
+/* Style for hyperlinks */
+a {
+    color: #1a73e8; /* Google blue */
+    text-decoration: none; /* Remove underline */
+    font-weight: 500; /* Medium weight */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #0c47a1; /* Darker blue on hover */
+}
+
+a:active {
+    color: #0c47a1; /* Darker blue when active */
+}
+
+a:visited {
+    color: #1a73e8;
+}
