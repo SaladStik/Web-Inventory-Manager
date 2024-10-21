@@ -8,13 +8,14 @@
 </head>
 <body>
     <h1>Welcome to the Main Menu</h1>
-    <button id="view-config">View Config</button>
 
+    <button id="view-config">View Config</button>
     <script>
         document.getElementById('view-config').addEventListener('click', function() {
             window.location.href = 'config.html';
         });
     </script>
+    <button id="edit-product">Edit Product</button>
     <table id="data-table">
         <thead>
             <tr>
@@ -37,11 +38,66 @@
         </tbody>
     </table>
 
-    <!-- The Modal -->
+    <!-- The Modal for Image Preview -->
     <div id="imageModal" class="modal" style="display: none;">
         <span class="close">&times;</span>
         <img class="modal-content" id="img01">
     </div>
+
+    <!-- The Modal for Editing Product -->
+    <div id="editProductModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" id="closeEditProductModal">&times;</span>
+            <h2>Edit Product</h2>
+            <!-- Add your form elements here -->
+            <form id="editProductForm">
+                <label for="productId">Product ID:</label>
+                <input type="text" id="productId" name="productId" readonly><br><br>
+                <label for="modelNumber">Model Number:</label>
+                <input type="text" id="modelNumber" name="modelNumber"><br><br>
+                <label for="alias">Alias:</label>
+                <input type="text" id="alias" name="alias"><br><br>
+                <label for="type">Type:</label>
+                <input type="text" id="type" name="type"><br><br>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity"><br><br>
+                <label for="barcode">Barcode:</label>
+                <input type="text" id="barcode" name="barcode"><br><br>
+                <label for="requireSerialNumber">Requires S/N:</label>
+                <input type="checkbox" id="requireSerialNumber" name="requireSerialNumber"><br><br>
+                <label for="imageUrl">Image URL:</label>
+                <input type="text" id="imageUrl" name="imageUrl"><br><br>
+                <label for="supplier">Supplier:</label>
+                <input type="text" id="supplier" name="supplier"><br><br>
+                <label for="supplierLink">Supplier Link:</label>
+                <input type="text" id="supplierLink" name="supplierLink"><br><br>
+                <label for="minStock">Min Stock:</label>
+                <input type="number" id="minStock" name="minStock"><br><br>
+                <label for="bin">Bin:</label>
+                <input type="text" id="bin" name="bin"><br><br>
+                <button type="submit" class="submit-button">Save</button>
+            </form>
+        </div>
+
+        <script>
+            document.getElementById('edit-product').addEventListener('click', function() {
+                document.getElementById('editProductModal').style.display = 'block';
+                document.body.classList.add('modal-open');
+            });
+
+            document.getElementById('closeEditProductModal').addEventListener('click', function() {
+                document.getElementById('editProductModal').style.display = 'none';
+                document.body.classList.remove('modal-open');
+            });
+
+            window.addEventListener('click', function(event) {
+                const modal = document.getElementById('editProductModal');
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.classList.remove('modal-open');
+                }
+            });
+        </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -54,21 +110,21 @@
                 data.forEach(item => {
                     const imageUrl = item.image_url ? `/images/${item.image_url}` : '';
                     const supplierLink = item.supplier_link ? new URL(item.supplier_link) : null;
-                    const truncatedLink = supplierLink ? `${supplierLink.origin}` : 'N/A';
+                    const truncatedLink = supplierLink ? `${supplierLink.origin}` : '';
                     const row = document.createElement('tr');
                     row.innerHTML = `
-                        <td>${item.id ?? 'N/A'}</td>
-                        <td>${item.model_number ?? 'N/A'}</td>
-                        <td>${item.alias ?? 'N/A'}</td>
-                        <td>${item.type ?? 'N/A'}</td>
-                        <td>${item.quantity ?? 'N/A'}</td>
-                        <td>${item.barcode ?? 'N/A'}</td>
+                        <td>${item.id ?? ''}</td>
+                        <td>${item.model_number ?? ''}</td>
+                        <td>${item.alias ?? ''}</td>
+                        <td>${item.type ?? ''}</td>
+                        <td>${item.quantity ?? ''}</td>
+                        <td>${item.barcode ?? ''}</td>
                         <td><input type="checkbox" ${item.require_serial_number ? 'checked' : ''} disabled></td>
                         <td class="preview-image-container">${imageUrl ? `<span class="click-to-view" data-url="${imageUrl}">Click To View Product</span>` : '<span class="no-image">No Image Available</span>'}</td>
-                        <td>${item.supplier ?? 'N/A'}</td>
+                        <td>${item.supplier ?? ''}</td>
                         <td><a href="${item.supplier_link ?? '#'}" target="_blank" class="supplier-link">${truncatedLink}</a></td>
-                        <td>${item.min_stock ?? 'N/A'}</td>
-                        <td>${item.bin ?? 'N/A'}</td>
+                        <td>${item.min_stock ?? ''}</td>
+                        <td>${item.bin ?? ''}</td>
                     `;
                     tableBody.appendChild(row);
 
@@ -93,6 +149,7 @@
                         modal.style.display = 'flex';
                         modalImg.src = this.dataset.url;
                         modalImg.style.transform = 'scale(1)'; // Reset zoom
+                        document.body.classList.add('modal-open');
                     });
                 });
             };
@@ -176,15 +233,28 @@
             span.onclick = function() {
                 console.log('Close button clicked');
                 modal.style.display = 'none';
+                document.body.classList.remove('modal-open');
             };
 
-            // Scroll to zoom
+            // Scroll to zoom and pan
             const modalImg = document.getElementById('img01');
             let scale = 1;
+            let originX = 0.5;
+            let originY = 0.5;
+
             modalImg.addEventListener('wheel', function(event) {
                 event.preventDefault();
+                const rect = modalImg.getBoundingClientRect();
+                const offsetX = (event.clientX - rect.left) / rect.width;
+                const offsetY = (event.clientY - rect.top) / rect.height;
+
                 scale += event.deltaY * -0.01;
                 scale = Math.min(Math.max(1, scale), 5); // Limit zoom scale between 1 and 5
+
+                originX = offsetX;
+                originY = offsetY;
+
+                modalImg.style.transformOrigin = `${originX * 100}% ${originY * 100}%`;
                 modalImg.style.transform = `scale(${scale})`;
             });
 

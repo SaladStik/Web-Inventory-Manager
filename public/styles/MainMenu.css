@@ -11,7 +11,7 @@ td.checkbox-cell {
 body {
     font-family: 'Inter', sans-serif;
     margin: 20px;
-    background: linear-gradient(to right, rgba(255, 0, 0, 0.5) 15%, rgba(37, 117, 252, 0.5) 100%);
+    background-image: linear-gradient(to right, #d16ba5, #c369b0, #b069bb, #986bc5, #7a6dcd, #637cdb, #448be6, #0098ee, #00b4f9, #00cdfb, #00e5f8, #5ffbf1);
     color: #333;
 }
 
@@ -70,23 +70,6 @@ th.descending::after {
     content: ' ▼';
 }
 
-/* Style for checkboxes */
-input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-    accent-color: #000000; /* Modern browsers support */
-    margin: 0;
-    vertical-align: middle;
-    border: 1px solid #000000;
-    border-radius: 4px;
-    background-color: #ffffff; /* Ensure white background */
-}
-
-input[type="checkbox"]:hover {
-    box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
-}
-
 /* Styles for resizable handles */
 .resizer {
     position: absolute;
@@ -107,37 +90,43 @@ input[type="checkbox"]:hover {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background: linear-gradient(to right, rgba(255, 0, 0, 0.5) 15%, rgba(37, 117, 252, 0.5) 100%); /* Gradient with transparency */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
     backdrop-filter: blur(5px); /* Blur background */
-    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .modal-content {
+    background-color: #fefefe;
     margin: auto;
-    display: block;
-    max-width: 90%;
-    max-height: 90%;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
-    transition: transform 0.25s ease; /* Smooth zoom transition */
+    border-radius: 10px; /* Rounded corners */
+    position: relative; /* Ensure positioning context for close button */
+}
+.modal-open {
+    overflow: hidden;
 }
 
 .close {
     position: absolute;
     top: 15px;
-    right: 35px;
-    color: #fff;
-    font-size: 40px;
+    right: 20px;
+    color: #aaa;
+    font-size: 65px;
     font-weight: bold;
-    transition: 0.3s;
+    transition: color 0.3s, transform 0.3s;
+    cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
-    color: #bbb;
+    color: #333;
+    transform: scale(1.2);
     text-decoration: none;
-    cursor: pointer;
 }
 
 .preview-image-container {
@@ -203,4 +192,181 @@ a:active {
 
 a:visited {
     color: #1a73e8;
+}
+
+.menuModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background: linear-gradient(to right, rgba(255, 0, 0, 0.5) 15%, rgba(37, 117, 252, 0.5) 100%); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Center text */
+}
+
+.menuModal-content {
+    background-color: #fff; /* White background */
+    padding: 20px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+    max-width: 500px; /* Max width */
+    width: 90%; /* Responsive width */
+    text-align: center; /* Center text */
+    margin: auto; /* Center horizontally */
+}
+
+button {
+    background: linear-gradient(135deg, #1a73e8, #0057e7); /* Gradient background */
+    color: white; /* White text */
+    padding: 12px 24px; /* Increased padding */
+    border: none; /* No border */
+    border-radius: 8px; /* More rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 16px; /* Font size */
+    margin-top: 10px; /* Margin top */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: background 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+button:hover {
+    background: linear-gradient(135deg, #0057e7, #1a73e8); /* Reverse gradient on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+button:active {
+    background: linear-gradient(135deg, #0047b3, #0047b3); /* Darker gradient on active */
+    transform: translateY(0); /* Reset lift on active */
+}
+
+button:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.5); /* Custom focus outline */
+}
+
+/* input for text */
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif; /* Use the Inter font */
+    font-size: 16px; /* Adjust font size for better readability */
+    background-color: #f9f9f9; /* Light background color */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+
+input[type="text"]:focus {
+    border-color: #1a73e8; /* Blue border on focus */
+    box-shadow: 0 0 5px rgba(26, 115, 232, 0.5); /* Subtle shadow on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Style for input labels */
+label {
+    font-family: 'Inter', sans-serif; /* Use the Inter font */
+    font-size: 14px; /* Adjust font size as needed */
+    color: #333; /* Text color */
+    display: block; /* Ensure labels are block elements */
+    margin-bottom: 8px; /* Space between label and input */
+    font-weight: 500; /* Medium weight for better readability */
+}
+
+/* input for numbers */
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif; /* Use the Inter font */
+    font-size: 16px; /* Adjust font size for better readability */
+    background-color: #f9f9f9; /* Light background color */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+
+/* input for checkboxes */
+input[type="checkbox"] {
+    width: 36px; /* Increase size */
+    height: 36px; /* Increase size */
+    cursor: pointer;
+    accent-color: #1a73e8; /* Modern blue accent color */
+    margin: 0;
+    vertical-align: center;
+    border: 2px solid #1a73e8; /* Thicker border */
+    border-radius: 6px; /* More rounded corners */
+    background-color: #ffffff; /* Ensure white background */
+    transition: all 0.3s ease; /* Smooth transition */
+ 
+}
+
+input[type="checkbox"]:hover {
+    box-shadow: 0 0 10px rgba(26, 115, 232, 0.5); /* Larger shadow on hover */
+}
+
+input[type="checkbox"]:checked {
+    background-color: #1a73e8; /* Blue background when checked */
+    border-color: #1a73e8; /* Blue border when checked */
+    color: #fff; /* White checkmark */
+}
+
+/* Style for submit button */
+.submit-button {
+    background: linear-gradient(135deg, #1a73e8, #0057e7); /* Gradient background */
+    color: white; /* White text */
+    padding: 14px 28px; /* Increased padding */
+    border: none; /* No border */
+    border-radius: 12px; /* More rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 18px; /* Larger font size */
+    margin-top: 12px; /* Margin top */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+
+.submit-button:hover {
+    background: linear-gradient(135deg, #0057e7, #1a73e8); /* Reverse gradient on hover */
+    transform: translateY(-3px); /* Slight lift on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+}
+
+.submit-button:active {
+    background: linear-gradient(135deg, #0047b3, #0047b3); /* Darker gradient on active */
+    transform: translateY(0); /* Reset lift on active */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow on active */
+}
+
+.submit-button:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 4px rgba(26, 115, 232, 0.5); /* Custom focus outline */
+}
+
+/* style for image modal */
+.imageModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background: linear-gradient(to right, rgba(255, 0, 0, 0.5) 15%, rgba(37, 117, 252, 0.5) 100%); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageModal .modal-content {
+    border-radius: 10px; /* Rounded corners for the image */
 }
