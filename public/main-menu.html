@@ -104,6 +104,8 @@
             console.log('DOM fully loaded and parsed');
             const tableBody = document.querySelector('#data-table tbody');
             let tableData = [];
+            let currentSortKey = null;
+            let currentSortOrder = true;
 
             const updateTable = (data) => {
                 tableBody.innerHTML = '';
@@ -170,18 +172,28 @@
                     document.querySelectorAll('#data-table thead th').forEach(h => h.classList.remove('ascending', 'descending'));
                     header.classList.toggle('ascending', ascending);
                     header.classList.toggle('descending', !ascending);
+                    currentSortKey = key;
+                    currentSortOrder = ascending;
                     sortData(key, ascending);
                 });
             });
 
+            const fetchData = () => {
+                fetch('/api/get-data')
+                    .then(response => response.json())
+                    .then(data => {
+                        tableData = data;
+                        if (currentSortKey) {
+                            sortData(currentSortKey, currentSortOrder);
+                        } else {
+                            updateTable(data);
+                        }
+                    })
+                    .catch(error => console.error('Error fetching data:', error));
+            };
+
             // Fetch initial data
-            fetch('/api/get-data')
-                .then(response => response.json())
-                .then(data => {
-                    tableData = data;
-                    updateTable(data);
-                })
-                .catch(error => console.error('Error fetching data:', error));
+            fetchData();
 
             // WebSocket setup
             const ws = new WebSocket(`ws://${window.location.host}`);
@@ -189,7 +201,11 @@
             ws.onmessage = (event) => {
                 const data = JSON.parse(event.data);
                 tableData = data;
-                updateTable(data);
+                if (currentSortKey) {
+                    sortData(currentSortKey, currentSortOrder);
+                } else {
+                    updateTable(data);
+                }
             };
 
             ws.onopen = () => {
