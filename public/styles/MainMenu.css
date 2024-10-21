@@ -219,6 +219,10 @@ a:visited {
     width: 90%; /* Responsive width */
     text-align: center; /* Center text */
     margin: auto; /* Center horizontally */
+    display: flex; /* Add flex display */
+    flex-direction: column; /* Ensure content stacks vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
 }
 
 button {
