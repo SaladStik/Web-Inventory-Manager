@@ -20,4 +20,7 @@ To contribute to this project, follow these steps:
 
 ## Screenshots
 
+Here is a little overview of what the product overview page looks like in comparison to its much older and uglier sibling
+
 ![Screenshot 1](./screenshots/MainMenu.png)
+![Screenshot 2](./screenshots/csProgram.png)
