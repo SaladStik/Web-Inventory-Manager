@@ -1,5 +1,4 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const path = require('path');
 const fs = require('fs');
 const { validateUser, getProductData } = require('./database');
@@ -12,7 +11,7 @@ const config = JSON.parse(fs.readFileSync(path.join(__dirname, 'config.json'), '
 const app = express();
 const port = 3000;
 
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public'))); // Serve static files from the 'public' directory
 
 // Serve images from the configured directory
@@ -85,8 +84,67 @@ app.get('/api/get-serial-numbers', async (req, res) => {
     }
 });
 
+app.post('/api/add-product', async (req, res) => {
+    const {
+        modelNumber,
+        alias,
+        type,
+        quantity,
+        barcode,
+        requireSerialNumber,
+        imageUrl,
+        supplier,
+        supplierLink,
+        minStock,
+        bin
+    } = req.body;
+
+    try {
+        // Insert the product into the database
+        const query = `
+            INSERT INTO product (
+                model_number, alias, type, quantity, barcode, require_serial_number, supplier_id, supplier_link, min_stock, bin
+            ) VALUES (
+                $1, $2, $3, $4, $5, $6, $7, $8, $9, $10
+            ) RETURNING id;
+        `;
+        const values = [
+            modelNumber,
+            alias,
+            type,
+            quantity,
+            barcode,
+            requireSerialNumber,
+            supplier ? await getSupplierId(supplier) : null,
+            supplierLink,
+            minStock,
+            bin
+        ];
+
+        const result = await db.query(query, values);
+        const productId = result.rows[0].id;
+
+        res.json({ success: true, productId });
+    } catch (error) {
+        console.error('Error adding product:', error);
+        res.status(500).json({ success: false, message: 'Error adding product.' });
+    }
+});
+
+async function getSupplierId(supplierName) {
+    const query = "SELECT id FROM supplier WHERE name = $1";
+    const result = await db.query(query, [supplierName]);
+    if (result.rows.length > 0) {
+        return result.rows[0].id;
+    } else {
+        const insertQuery = "INSERT INTO supplier(name) VALUES($1) RETURNING id";
+        const insertResult = await db.query(insertQuery, [supplierName]);
+        return insertResult.rows[0].id;
+    }
+}
+
 const server = app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+    console.log(`Server running at http://localhost:${port}/`);
 });
 
 // WebSocket server setup

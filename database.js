@@ -13,6 +13,19 @@ const client = new Client({
 client.connect();
 
 module.exports = {
+    query: async (text, params) => {
+        console.log('Executing query:', text);
+        console.log('With parameters:', params);
+        try {
+            const res = await client.query(text, params);
+            console.log('Query result:', res.rows);
+            return res;
+        } catch (err) {
+            console.error('Query error:', err);
+            throw err;
+        }
+    },
+    
     validateUser: async (username, password) => {
         const query = 'SELECT password FROM users WHERE LOWER(username) = $1';
         const values = [username.toLowerCase()];
@@ -34,7 +47,7 @@ module.exports = {
 
             console.log('Stored password hash:', storedPasswordHash);
 
-            // Directly compare the provided password with the stored password hash
+            // Directly compare the provided password the stored password hash
             const isValid = storedPasswordHash === password;
             console.log(`IsValid: ${isValid}`);
             return isValid;
@@ -52,7 +65,9 @@ module.exports = {
             ORDER BY p.id ASC`;
 
         try {
+            console.log('Executing query:', query);
             const res = await client.query(query);
+            console.log('Query result:', res.rows);
             return res.rows;
         } catch (err) {
             console.error('Error fetching product data:', err);

@@ -220,10 +220,12 @@ a:visited {
     text-align: center; /* Center text */
     margin: auto; /* Center horizontally */
     display: flex; /* Add flex display */
-    flex-direction: column; /* Ensure content stacks vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    gap: 10px; /* Add space between items */
 }
+
 
 button {
     background: linear-gradient(135deg, #1a73e8, #0057e7); /* Gradient background */
@@ -292,11 +294,23 @@ input[type="number"] {
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
-    border-radius: 4px;
+    border-radius: 8px; /* More rounded corners */
     font-family: 'Inter', sans-serif; /* Use the Inter font */
     font-size: 16px; /* Adjust font size for better readability */
     background-color: #f9f9f9; /* Light background color */
     transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    appearance: none; /* Remove default styling */
+    -moz-appearance: textfield; /* Remove default styling in Firefox */
+    position: relative; /* Ensure positioning context for custom spinner */
+}
+
+input[type="number"]:focus {
+    border-color: #1a73e8; /* Blue border on focus */
+    content: '▲▼'; /* Add spinner content */
+    box-shadow: 0 0 5px rgba(26, 115, 232, 0.5); /* Subtle shadow on focus */
+    outline: none; /* Remove default outline */
+    background-color: #fff; /* White background on focus */
 }
 
 /* input for checkboxes */
@@ -322,6 +336,48 @@ input[type="checkbox"]:checked {
     background-color: #1a73e8; /* Blue background when checked */
     border-color: #1a73e8; /* Blue border when checked */
     color: #fff; /* White checkmark */
+}
+/* Input for file upload */ 
+input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif; /* Use the Inter font */
+    font-size: 16px; /* Adjust font size for better readability */
+    background-color: #f9f9f9; /* Light background color */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+    cursor: pointer; /* Pointer cursor */
+}
+
+input[type="file"]::file-selector-button {
+    background: linear-gradient(135deg, #1a73e8, #0057e7); /* Gradient background */
+    color: white; /* White text */
+    padding: 8px 16px; /* Padding */
+    border: none; /* No border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 16px; /* Font size */
+    transition: background 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+input[type="file"]::file-selector-button:hover {
+    background: linear-gradient(135deg, #0057e7, #1a73e8); /* Reverse gradient on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+input[type="file"]::file-selector-button:active {
+    background: linear-gradient(135deg, #0047b3, #0047b3); /* Darker gradient on active */
+    transform: translateY(0); /* Reset lift on active */
+}
+
+input[type="file"]:focus {
+    border-color: #1a73e8; /* Blue border on focus */
+    box-shadow: 0 0 5px rgba(26, 115, 232, 0.5); /* Subtle shadow on focus */
+    outline: none; /* Remove default outline */
 }
 
 /* Style for submit button */
@@ -373,4 +429,19 @@ input[type="checkbox"]:checked {
 
 .imageModal .modal-content {
     border-radius: 10px; /* Rounded corners for the image */
+}
+
+/*style dropdown inputs */
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif; /* Use the Inter font */
+    font-size: 16px; /* Adjust font size for better readability */
+    background-color: #f9f9f9; /* Light background color */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
 }

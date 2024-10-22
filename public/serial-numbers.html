@@ -41,11 +41,11 @@
                 data.forEach(item => {
                     const row = document.createElement('tr');
                     row.innerHTML = `
-                        <td>${item.serial_number}</td>
+                        <td>${item.serial_number ?? ''}</td>
                         <td>${item.date}</td>
-                        <td>${item.note}</td>
-                        <td>${item.ticket_num}</td>
-                        <td>${item.location_name}</td>
+                        <td>${item.note ?? ''}</td>
+                        <td>${item.ticket_num ?? ''}</td>
+                        <td>${item.location_name ?? ''}</td>
                     `;
                     tableBody.appendChild(row);
                 });

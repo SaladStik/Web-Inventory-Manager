@@ -15,7 +15,8 @@
             window.location.href = 'config.html';
         });
     </script>
-    <button id="edit-product">Edit Product</button>
+    <button id="add-product">Add Product</button>
+    <button id="Edit-product">Edit Product</button>
     <table id="data-table">
         <thead>
             <tr>
@@ -44,15 +45,15 @@
         <img class="modal-content" id="img01">
     </div>
 
-    <!-- The Modal for Editing Product -->
-    <div id="editProductModal" class="modal" style="display: none;">
+    <!-- The Modal for Adding Product -->
+    <div id="addProductModal" class="modal" style="display: none;">
         <div class="modal-content">
-            <span class="close" id="closeEditProductModal">&times;</span>
-            <h2>Edit Product</h2>
+            <span class="close" id="closeAddProductModal">&times;</span>
+            <h2>Add Product</h2>
             <!-- Add your form elements here -->
-            <form id="editProductForm">
+            <form id="addProductForm">
                 <label for="productId">Product ID:</label>
-                <input type="text" id="productId" name="productId" readonly><br><br>
+                <input type="text" id="productId" name="productId"><br><br>
                 <label for="modelNumber">Model Number:</label>
                 <input type="text" id="modelNumber" name="modelNumber"><br><br>
                 <label for="alias">Alias:</label>
@@ -64,42 +65,87 @@
                 <label for="barcode">Barcode:</label>
                 <input type="text" id="barcode" name="barcode"><br><br>
                 <label for="requireSerialNumber">Requires S/N:</label>
-                <input type="checkbox" id="requireSerialNumber" name="requireSerialNumber"><br><br>
-                <label for="imageUrl">Image URL:</label>
-                <input type="text" id="imageUrl" name="imageUrl"><br><br>
+                <input type="checkbox" id="requireSerialNumber" name="requireSerialNumber"><br><br> 
                 <label for="supplier">Supplier:</label>
-                <input type="text" id="supplier" name="supplier"><br><br>
+                <input type="text" id="supplier" name="supplier" list="supplierList"><br><br>
+                <datalist id="supplierList">
+                    <!-- Options will be dynamically inserted here -->
+                </datalist>
                 <label for="supplierLink">Supplier Link:</label>
                 <input type="text" id="supplierLink" name="supplierLink"><br><br>
                 <label for="minStock">Min Stock:</label>
                 <input type="number" id="minStock" name="minStock"><br><br>
                 <label for="bin">Bin:</label>
                 <input type="text" id="bin" name="bin"><br><br>
+                <label for="productImage">Product Image:</label>
+                <input type="file" id="productImage" name="productImage" accept="image/*"><br><br>
                 <button type="submit" class="submit-button">Save</button>
             </form>
         </div>
-
-        <script>
-            document.getElementById('edit-product').addEventListener('click', function() {
-                document.getElementById('editProductModal').style.display = 'block';
-                document.body.classList.add('modal-open');
-            });
-
-            document.getElementById('closeEditProductModal').addEventListener('click', function() {
-                document.getElementById('editProductModal').style.display = 'none';
-                document.body.classList.remove('modal-open');
-            });
-
-            window.addEventListener('click', function(event) {
-                const modal = document.getElementById('editProductModal');
-                if (event.target === modal) {
-                    modal.style.display = 'none';
-                    document.body.classList.remove('modal-open');
-                }
-            });
-        </script>
+    </div>
 
     <script>
+        document.getElementById('add-product').addEventListener('click', function() {
+            document.getElementById('addProductModal').style.display = 'flex';
+            document.body.classList.add('modal-open');
+        });
+
+        document.getElementById('closeAddProductModal').addEventListener('click', function() {
+            document.getElementById('addProductModal').style.display = 'none';
+            document.body.classList.remove('modal-open');
+        });
+
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('addProductModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.classList.remove('modal-open');
+            }
+        });
+
+        // Handle form submission
+        document.getElementById('addProductForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            const productData = {
+                modelNumber: formData.get('modelNumber'),
+                alias: formData.get('alias'),
+                type: formData.get('type'),
+                quantity: formData.get('quantity'),
+                barcode: formData.get('barcode'),
+                requireSerialNumber: formData.get('requireSerialNumber') ? 1 : 0,
+                imageUrl: formData.get('imageUrl') || null,
+                supplier: formData.get('supplier') || null,
+                supplierLink: formData.get('supplierLink') || null,
+                minStock: formData.get('minStock') || null,
+                bin: formData.get('bin') || null
+            };
+
+            fetch('/api/add-product', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(productData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Product added successfully!');
+                    document.getElementById('addProductModal').style.display = 'none';
+                    document.body.classList.remove('modal-open');
+                    // Optionally, refresh the product table here
+                } else {
+                    alert('Error adding product: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error adding product.');
+            });
+        });
+
         document.addEventListener('DOMContentLoaded', function() {
             console.log('DOM fully loaded and parsed');
             const tableBody = document.querySelector('#data-table tbody');
