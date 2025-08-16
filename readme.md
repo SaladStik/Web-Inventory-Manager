@@ -14,6 +14,15 @@ The backend has been migrated to **Go** and serves live inventory updates using 
 go run main.go
 ```
 
+## Database
+
+The backend now uses PostgreSQL for persistence. Configure the connection using the `DATABASE_URL` environment variable. The server will create required tables and a default `admin` user on startup.
+
+```bash
+export DATABASE_URL=postgres://postgres:postgres@localhost:5432/webinventory?sslmode=disable
+go run main.go
+```
+
 ## Contributing
 
 To contribute to this project, follow these steps:

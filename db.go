@@ -1,86 +1,145 @@
 package main
 
 import (
+	"database/sql"
+	"errors"
 	"fmt"
-	"sync"
+	"os"
 	"time"
 
+	_ "github.com/lib/pq"
 	"golang.org/x/crypto/bcrypt"
 )
 
-type User struct {
-	PasswordHash []byte
-	IsAdmin      bool
-}
-
 type DB struct {
-	mu            sync.Mutex
-	users         map[string]User
-	products      []Product
-	serialNumbers map[int][]SerialNumber
-	nextProductID int
-	nextSerialID  int
+	*sql.DB
 }
 
 func NewDB() (*DB, error) {
-	hash, err := bcrypt.GenerateFromPassword([]byte("admin"), bcrypt.DefaultCost)
+	dsn := os.Getenv("DATABASE_URL")
+	if dsn == "" {
+		dsn = "postgres://postgres:postgres@localhost:5432/webinventory?sslmode=disable"
+	}
+	db, err := sql.Open("postgres", dsn)
 	if err != nil {
 		return nil, err
 	}
-	return &DB{
-		users:         map[string]User{"admin": {PasswordHash: hash, IsAdmin: true}},
-		products:      []Product{},
-		serialNumbers: make(map[int][]SerialNumber),
-		nextProductID: 1,
-		nextSerialID:  1,
-	}, nil
+	if err := db.Ping(); err != nil {
+		return nil, err
+	}
+	d := &DB{db}
+	if err := d.init(); err != nil {
+		return nil, err
+	}
+	return d, nil
+}
+
+func (db *DB) init() error {
+	_, err := db.Exec(`CREATE TABLE IF NOT EXISTS users (
+        username TEXT PRIMARY KEY,
+        password_hash BYTEA NOT NULL,
+        is_admin BOOLEAN NOT NULL DEFAULT FALSE
+    );
+
+    CREATE TABLE IF NOT EXISTS products (
+        id SERIAL PRIMARY KEY,
+        model_number TEXT,
+        alias TEXT,
+        type TEXT,
+        quantity INTEGER,
+        barcode TEXT,
+        require_serial_number BOOLEAN,
+        image_url TEXT,
+        supplier TEXT,
+        supplier_link TEXT,
+        min_stock INTEGER,
+        bin TEXT
+    );
+
+    CREATE TABLE IF NOT EXISTS serial_numbers (
+        id SERIAL PRIMARY KEY,
+        product_id INTEGER REFERENCES products(id),
+        location_name TEXT,
+        serial_number TEXT,
+        date TIMESTAMPTZ,
+        note TEXT,
+        ticket_num TEXT
+    );`)
+	if err != nil {
+		return err
+	}
+
+	var count int
+	if err := db.QueryRow("SELECT COUNT(*) FROM users WHERE username=$1", "admin").Scan(&count); err != nil {
+		return err
+	}
+	if count == 0 {
+		hash, err := bcrypt.GenerateFromPassword([]byte("admin"), bcrypt.DefaultCost)
+		if err != nil {
+			return err
+		}
+		if _, err := db.Exec("INSERT INTO users(username, password_hash, is_admin) VALUES($1,$2,$3)", "admin", hash, true); err != nil {
+			return err
+		}
+	}
+	return nil
 }
 
 func (db *DB) ValidateUser(username, password string) (bool, error) {
-	db.mu.Lock()
-	defer db.mu.Unlock()
-	u, ok := db.users[username]
-	if !ok {
+	var hash []byte
+	err := db.QueryRow("SELECT password_hash FROM users WHERE username=$1", username).Scan(&hash)
+	if errors.Is(err, sql.ErrNoRows) {
 		return false, nil
 	}
-	if err := bcrypt.CompareHashAndPassword(u.PasswordHash, []byte(password)); err != nil {
+	if err != nil {
+		return false, err
+	}
+	if bcrypt.CompareHashAndPassword(hash, []byte(password)) != nil {
 		return false, nil
 	}
 	return true, nil
 }
 
 func (db *DB) AddUser(username, password string, isAdmin bool) error {
-	db.mu.Lock()
-	defer db.mu.Unlock()
-	if _, exists := db.users[username]; exists {
-		return fmt.Errorf("user already exists")
-	}
 	hash, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
 	if err != nil {
 		return err
 	}
-	db.users[username] = User{PasswordHash: hash, IsAdmin: isAdmin}
+	_, err = db.Exec("INSERT INTO users(username, password_hash, is_admin) VALUES($1,$2,$3)", username, hash, isAdmin)
+	if err != nil {
+		if pqErr(err, "23505") {
+			return fmt.Errorf("user already exists")
+		}
+		return err
+	}
 	return nil
 }
 
 func (db *DB) DeleteUser(username string) error {
-	db.mu.Lock()
-	defer db.mu.Unlock()
-	if _, exists := db.users[username]; !exists {
+	res, err := db.Exec("DELETE FROM users WHERE username=$1", username)
+	if err != nil {
+		return err
+	}
+	n, err := res.RowsAffected()
+	if err != nil {
+		return err
+	}
+	if n == 0 {
 		return fmt.Errorf("user not found")
 	}
-	delete(db.users, username)
 	return nil
 }
 
 func (db *DB) IsAdmin(username string) (bool, error) {
-	db.mu.Lock()
-	defer db.mu.Unlock()
-	u, ok := db.users[username]
-	if !ok {
+	var isAdmin bool
+	err := db.QueryRow("SELECT is_admin FROM users WHERE username=$1", username).Scan(&isAdmin)
+	if errors.Is(err, sql.ErrNoRows) {
 		return false, fmt.Errorf("user not found")
 	}
-	return u.IsAdmin, nil
+	if err != nil {
+		return false, err
+	}
+	return isAdmin, nil
 }
 
 type Product struct {
@@ -99,11 +158,21 @@ type Product struct {
 }
 
 func (db *DB) GetProductData() ([]Product, error) {
-	db.mu.Lock()
-	defer db.mu.Unlock()
-	products := make([]Product, len(db.products))
-	copy(products, db.products)
-	return products, nil
+	rows, err := db.Query(`SELECT id, model_number, alias, type, quantity, barcode, require_serial_number, image_url, supplier, supplier_link, min_stock, bin FROM products`)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	var products []Product
+	for rows.Next() {
+		var p Product
+		if err := rows.Scan(&p.ID, &p.ModelNumber, &p.Alias, &p.Type, &p.Quantity, &p.Barcode, &p.RequireSerialNumber, &p.ImageURL, &p.Supplier, &p.SupplierLink, &p.MinStock, &p.Bin); err != nil {
+			return nil, err
+		}
+		products = append(products, p)
+	}
+	return products, rows.Err()
 }
 
 type SerialNumber struct {
@@ -117,12 +186,25 @@ type SerialNumber struct {
 }
 
 func (db *DB) GetSerialNumbers(productID int) ([]SerialNumber, error) {
-	db.mu.Lock()
-	defer db.mu.Unlock()
-	list := db.serialNumbers[productID]
-	res := make([]SerialNumber, len(list))
-	copy(res, list)
-	return res, nil
+	rows, err := db.Query(`SELECT id, product_id, location_name, serial_number, date, note, ticket_num FROM serial_numbers WHERE product_id=$1`, productID)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	var list []SerialNumber
+	for rows.Next() {
+		var s SerialNumber
+		var t sql.NullTime
+		if err := rows.Scan(&s.ID, &s.ProductID, &s.LocationName, &s.SerialNumber, &t, &s.Note, &s.TicketNum); err != nil {
+			return nil, err
+		}
+		if t.Valid {
+			s.Date = &t.Time
+		}
+		list = append(list, s)
+	}
+	return list, rows.Err()
 }
 
 type ProductInput struct {
@@ -140,24 +222,22 @@ type ProductInput struct {
 }
 
 func (db *DB) AddProduct(p ProductInput) (int, error) {
-	db.mu.Lock()
-	defer db.mu.Unlock()
-	id := db.nextProductID
-	db.nextProductID++
-	product := Product{
-		ID:                  id,
-		ModelNumber:         p.ModelNumber,
-		Alias:               p.Alias,
-		Type:                p.Type,
-		Quantity:            p.Quantity,
-		Barcode:             p.Barcode,
-		RequireSerialNumber: p.RequireSerialNumber,
-		ImageURL:            p.ImageURL,
-		Supplier:            p.Supplier,
-		SupplierLink:        p.SupplierLink,
-		MinStock:            p.MinStock,
-		Bin:                 p.Bin,
+	var id int
+	err := db.QueryRow(`INSERT INTO products (model_number, alias, type, quantity, barcode, require_serial_number, image_url, supplier, supplier_link, min_stock, bin)
+        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11) RETURNING id`,
+		p.ModelNumber, p.Alias, p.Type, p.Quantity, p.Barcode, p.RequireSerialNumber, p.ImageURL, p.Supplier, p.SupplierLink, p.MinStock, p.Bin).Scan(&id)
+	if err != nil {
+		return 0, err
 	}
-	db.products = append(db.products, product)
 	return id, nil
+}
+
+func pqErr(err error, code string) bool {
+	type coder interface {
+		SQLState() string
+	}
+	if e, ok := err.(coder); ok {
+		return e.SQLState() == code
+	}
+	return false
 }
