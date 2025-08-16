@@ -241,10 +241,10 @@
             // Fetch initial data
             fetchData();
 
-            // WebSocket setup
-            const ws = new WebSocket(`ws://${window.location.host}`);
+            // Server-Sent Events setup
+            const events = new EventSource('/events');
 
-            ws.onmessage = (event) => {
+            events.onmessage = (event) => {
                 const data = JSON.parse(event.data);
                 tableData = data;
                 if (currentSortKey) {
@@ -254,16 +254,8 @@
                 }
             };
 
-            ws.onopen = () => {
-                console.log('WebSocket connection established');
-            };
-
-            ws.onclose = () => {
-                console.log('WebSocket connection closed');
-            };
-
-            ws.onerror = (error) => {
-                console.error('WebSocket error:', error);
+            events.onerror = (error) => {
+                console.error('EventSource failed:', error);
             };
 
             // Resizable columns
